@@ -67,11 +67,11 @@ Current=simple-sddm-2
 1. SUPER + CTRL + B
 2. choose desired style
 
-#### Choose Layou
+#### Choose Layout
 
-> Layouts I quite like (all shown with [Catpuccin] Mocha theme):
+> Layouts I quite like: 
 >
-> Default ![image](https://github.com/user-attachments/assets/ac609172-7415-4b1e-ac88-37e5a40d7736)
+> Default
 
 
 2. SUPER + ALT + B
