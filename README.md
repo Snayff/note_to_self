@@ -25,7 +25,7 @@
 
 ### Define window rules:    
  1. Amend `WindowRules.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
-  	- add opacity rules for firefox.
+	- add opacity rules for firefox.
 ```
 windowrulev2 = opacity 1.0 override, title: (.*YouTube.*)$
 windowrulev2 = opacity 1.0 override, title: (.*Prime Video.*)$
@@ -76,7 +76,18 @@ Current=simple-sddm-2
 
 2. SUPER + ALT + B
 3. choose desired layout
- 	
+
+#### Define UserSettings
+1. Amend `UserSettings.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
+	- turn off auto focus on mouse move `follow_mouse = true`
+ 	- turn off mouse acceleration `  accel_profile = flat`
+  	- turn on paste with middle mouse click `middle_click_paste = true`
+  
+#### Define UserDecorations
+1. Amend `UserDecorations.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
+	- change gap sizes
+ 		- increase gaps between windows `gaps_in = 4`
+   		- increase gaps between windows and outer edge `gaps_out = 12`
 
 # TODO Lists
 ## Config Hyprland
@@ -97,8 +108,8 @@ Current=simple-sddm-2
  	- use the bottom section from Layout:Summer Split: ![image](https://github.com/user-attachments/assets/a5329913-21e3-48c9-9430-3e871e7140da)
   	-  use the top right section from Layout:Everforest  ![image](https://github.com/user-attachments/assets/86c0868c-872c-4ce6-a24d-764e69afd7e2)
 
+- hard define border colours, prevent wallust overwriting
 - align windows to have a gap around the outside (away from edge) ![image](https://github.com/user-attachments/assets/57ccc2ba-6d5c-4364-af8b-87f4c1838f1d)
-- add gap between windows
 - tiling to cut horizontal
 - create some default app groups:
 	- dev:
