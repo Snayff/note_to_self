@@ -91,7 +91,9 @@ Current=simple-sddm-2
 
 # TODO Lists
 ## Config Hyprland
-- https://wiki.hyprland.org/Nvidia/
+- https://wiki.hyprland.org/Configuring/Variables/
+- setup for nvidia:
+	- https://wiki.hyprland.org/Nvidia/
 - Can we clean up global hotkeys I won't use? https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#%EF%B8%8F-added-keybinds-but-does-not-work
 - Configure workspace opening rules
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#-some-packages-are-opening-on-a-specific-workspaces
@@ -105,9 +107,11 @@ Current=simple-sddm-2
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_Terminal#fastfetch
 - Customise waybar
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/Customizing_waybar
+ 	- https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+  	- https://wiki.hyprland.org/Useful-Utilities/Status-Bars/#waybar
  	- use the bottom section from Layout:Summer Split: ![image](https://github.com/user-attachments/assets/a5329913-21e3-48c9-9430-3e871e7140da)
-  	-  use the top right section from Layout:Everforest  ![image](https://github.com/user-attachments/assets/86c0868c-872c-4ce6-a24d-764e69afd7e2)
-
+  	- use the top right section from Layout:Everforest  ![image](https://github.com/user-attachments/assets/86c0868c-872c-4ce6-a24d-764e69afd7e2)
+- add hypsunset for bluelight filter https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/
 - hard define border colours, prevent wallust overwriting
 - align windows to have a gap around the outside (away from edge) ![image](https://github.com/user-attachments/assets/57ccc2ba-6d5c-4364-af8b-87f4c1838f1d)
 - tiling to cut horizontal
@@ -119,7 +123,7 @@ Current=simple-sddm-2
 	- work & watch:
  		-  browser, left and mid, no opacity
    		-  broswer, right, no opacity
-
+- setup VSCode for editing Hyprland: https://marketplace.visualstudio.com/items?itemName=ewen-lbh.hyprland
 
 ## Functionality
 - Swappy
