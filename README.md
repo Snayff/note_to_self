@@ -18,7 +18,7 @@
 
 ## Configuration
 > [!IMPORTANT]
-> Make a backup of any `.conf` file before making amends.
+> Make a backup of any `.conf` file before making amends. (e.g. create a copy and rename with`.bak` at the end)
 
 > [!NOTE]
 > Example hyprland config: https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.conf
@@ -36,6 +36,26 @@ windowrulev2 = opacity 1.0 override, title: (.*bbc*)$
 ```
 > [!WARNING]
 >  twitch, plex, bbc dont work. 
+
+### Define Screen Lock and Suspend Rules
+> [!NOTE]
+> All files found in this folder: `/home/[user]/.config/hypr/`.
+
+1. Turn off idle and resume notifications.
+   - comment out these lines in `hypridle.conf`, by placing a `#` at the start.
+```
+    #on-timeout = notify-send -i $iDIR " You are idle!"
+    #on-resume = notify-send -i $iDIR " Oh! you're Back" " Hello !!!"
+```
+2. Turn on screen blanking on lock.
+   - uncomment these lines in `hypridle.conf`:
+```
+listener {
+    timeout = 630                            # 10.5 min
+    on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
+    on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
+}
+```
 
 
 ### Define SDDM/login screen:
@@ -77,44 +97,68 @@ Current=simple-sddm-2
 2. SUPER + ALT + B
 3. choose desired layout
 
-#### Define UserSettings
-1. Amend `UserSettings.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
-	- turn off auto focus on mouse move `follow_mouse = true`
- 	- turn off mouse acceleration `  accel_profile = flat`
-  	- turn on paste with middle mouse click `middle_click_paste = true`
   
-#### Define UserDecorations
+### Define UserDecorations
 1. Amend `UserDecorations.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
 	- change gap sizes
  		- increase gaps between windows `gaps_in = 4`
    		- increase gaps between windows and outer edge `gaps_out = 12`
+  
+### Mouse Settings
+> [!NOTE]
+> either add the inner line  to the existing `input` section or add the input section
+
+
+1. Turn off mouse acceleration.
+   - update `UserSettings.conf` with the following. 
+```
+input {
+  accel_profile = flat
+}
+```
+
+2. Turn off focus on mouse move.
+   -  update `UserSettings.conf` with the following.
+```
+input {
+  follow_mouse = false
+}
+```
+
+3. Turn on paste with middle click.
+   -  update `UserSettings.conf` with the following.
+```
+input {
+  middle_click_paste = true
+}
+```
 
 # TODO Lists
 ## Config Hyprland
-- https://wiki.hyprland.org/Configuring/Variables/
+Ref: https://wiki.hyprland.org/Configuring/Variables/
+
+- Waybar config:
+	- refer to these to determine amendments to make:
+ 		- https://github.com/JaKooLit/Hyprland-Dots/wiki/Customizing_waybar
+		- https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+		- https://wiki.hyprland.org/Useful-Utilities/Status-Bars/#waybar
+	- use the bottom section from Layout:Summer Split: ![image](https://github.com/user-attachments/assets/a5329913-21e3-48c9-9430-3e871e7140da)
+	- use the top right section from Layout:Everforest  ![image](https://github.com/user-attachments/assets/86c0868c-872c-4ce6-a24d-764e69afd7e2)
+ 	- Waybar fonts and font size:  https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#%EF%B8%8F-adjusting-fonts-sizes-and-font-scaling-including-waybar-fonts-and-kitty-terminal
+
 - setup for nvidia:
 	- https://wiki.hyprland.org/Nvidia/
 - Can we clean up global hotkeys I won't use? https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#%EF%B8%8F-added-keybinds-but-does-not-work
 - Configure workspace opening rules
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#-some-packages-are-opening-on-a-specific-workspaces
-- Waybar fonts and font size
- 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#%EF%B8%8F-adjusting-fonts-sizes-and-font-scaling-including-waybar-fonts-and-kitty-terminal
-- Animations
+- - Animations
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#-hyprland-animations
-- Pick rofi and waybar themes
-	- https://github.com/JaKooLit/Hyprland-Dots/wiki/Gallery
 - Config fast fetch
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_Terminal#fastfetch
-- Customise waybar
-	- https://github.com/JaKooLit/Hyprland-Dots/wiki/Customizing_waybar
- 	- https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
-  	- https://wiki.hyprland.org/Useful-Utilities/Status-Bars/#waybar
- 	- use the bottom section from Layout:Summer Split: ![image](https://github.com/user-attachments/assets/a5329913-21e3-48c9-9430-3e871e7140da)
-  	- use the top right section from Layout:Everforest  ![image](https://github.com/user-attachments/assets/86c0868c-872c-4ce6-a24d-764e69afd7e2)
+
 - add hypsunset for bluelight filter https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/
 - hard define border colours, prevent wallust overwriting
-- align windows to have a gap around the outside (away from edge) ![image](https://github.com/user-attachments/assets/57ccc2ba-6d5c-4364-af8b-87f4c1838f1d)
-- tiling to cut horizontal
+- tiling to cut horizontal (use master layout?)
 - create some default app groups:
 	- dev:
  		- godot - main, left, no opacity
@@ -124,6 +168,12 @@ Current=simple-sddm-2
  		-  browser, left and mid, no opacity
    		-  broswer, right, no opacity
 - setup VSCode for editing Hyprland: https://marketplace.visualstudio.com/items?itemName=ewen-lbh.hyprland
+- ? do we need to use nwg-look? https://github.com/nwg-piotr/nwg-look
+- ? swap swappy for hyprshot or flameshot
+- ? anything to copy from HyDE? https://github.com/Hyde-project/hyde
+- ? swap to hyprpanel from waybar? https://github.com/Jas-SinghFSU/HyprPanel
+- hyprland dotfile backups
+- change dropdown terminal to use alacritty (and note about changing the default to alacritty)
 
 ## Functionality
 - Swappy
