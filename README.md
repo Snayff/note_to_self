@@ -16,14 +16,14 @@
 4. Install JaKoolit Hyprland via terminal `sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Arch-Hyprland/main/auto-install.sh)`.
 	- Source: https://github.com/JaKooLit/Arch-Hyprland
 
-## Configuration
+# Configuring Hyprland
 > [!IMPORTANT]
 > Make a backup of any `.conf` file before making amends. (e.g. create a copy and rename with`.bak` at the end)
 
 > [!NOTE]
 > Example hyprland config: https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.conf
 
-### Define window rules:    
+## Define window rules:    
  1. Amend `WindowRules.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
 	- add opacity rules for firefox.
 ```
@@ -35,9 +35,9 @@ windowrulev2 = opacity 1.0 override, title: (.*app.plex.*)$
 windowrulev2 = opacity 1.0 override, title: (.*bbc*)$
 ```
 > [!WARNING]
->  twitch, plex, bbc dont work. 
+>  twitch, plex, bbc dont work. 🤷
 
-### Define Screen Lock and Suspend Rules
+## Define Screen Lock and Suspend Rules
 > [!NOTE]
 > All files found in this folder: `/home/[user]/.config/hypr/`.
 
@@ -58,7 +58,7 @@ listener {
 ```
 
 
-### Define SDDM/login screen:
+## Define SDDM/login screen:
 1. Change theme:
 	- Open theme file via terminal  `sudo nano /etc/sddm.conf.d/theme.conf.user`
     - Change listed theme. Ctrl-o + Enter to save, ctrl-x to exit.
@@ -67,27 +67,35 @@ listener {
 Current=simple-sddm-2
 ```
 
-### Change Waybar:
+## Change Waybar:
 > [!NOTE]
 > Review gallery here: https://github.com/JaKooLit/Hyprland-Dots/wiki/Gallery
 > Gallery doesnt exactly match the options
 
-#### Choose Theme
+### Choose Theme
 > Themes I quite like: 
 > 
 > [Colored] Chroma Glow  ![image](https://github.com/user-attachments/assets/cf8b3faf-b391-4138-9847-0fa036f1cba1)
+> 
 > [Colourful] Oglo Chicklets   ![image](https://github.com/user-attachments/assets/80f0012e-886f-4686-9c59-ae32fb8f16c5)
+> 
 > [Colourful] Rainbow Spectrum (with amendments to the initial section) ![image](https://github.com/user-attachments/assets/58011de1-5a14-4470-992c-64aa4e80e83b)
+> 
 > [Catpuccin] Mocha ![image](https://github.com/user-attachments/assets/02eac06f-0403-497d-8d2b-7dcd66a772a5)
+> 
 > [Dark] Golden Eclipse  ![image](https://github.com/user-attachments/assets/48372cc8-84d5-4eb7-ad71-336cbf07508e)
+> 
 > [Dark] Half-moon ![image](https://github.com/user-attachments/assets/941617c3-8389-4e2b-88dc-ae3b5bf63460)
+> 
 > [Dark] Purpl ![image](https://github.com/user-attachments/assets/1bea4ea5-31fe-47a4-95a9-1a8f4da0669a)
+> 
 > [Extra] Modern Combined - Transparent ![image](https://github.com/user-attachments/assets/151cf1ef-c40b-460f-b2c0-0d201a600e17)
+> 
 
 1. SUPER + CTRL + B
 2. choose desired style
 
-#### Choose Layout
+### Choose Layout
 
 > Layouts I quite like: 
 >
@@ -98,13 +106,13 @@ Current=simple-sddm-2
 3. choose desired layout
 
   
-### Define UserDecorations
+## Define UserDecorations
 1. Amend `UserDecorations.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
 	- change gap sizes
  		- increase gaps between windows `gaps_in = 4`
    		- increase gaps between windows and outer edge `gaps_out = 12`
   
-### Mouse Settings
+## Mouse Settings
 > [!NOTE]
 > either add the inner line  to the existing `input` section or add the input section
 
@@ -132,6 +140,37 @@ input {
   middle_click_paste = true
 }
 ```
+
+# Setting Up Apps
+## Simple and Straightforward Installs
+> [!NOTE]
+> from Arch Package with `pacman -S [package name]` or AUR with `yay -S [package name]`
+1. Steam
+2. Firefox
+3. Alacritty
+
+## Spotify
+> [!CAUTION]
+> Not yet working
+
+> [!NOTE]
+> ! Plan !
+> Install spotify then Spicetify: https://spicetify.app/docs/advanced-usage/installation/
+> 
+> ! Progress !
+>
+> No official app. Semi-official snap or ubuntu ver.
+> 
+> `sudo pacman -S spotify-launcher`
+> gave this error:
+>
+> ```
+> error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from ch.mirrors.cicku.me : The requested URL returned error: 404
+> error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from mirror.osbeck.com : The requested URL returned error: 404
+> error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from archlinux.cu.be : The requested URL returned error: 404
+> error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from ftp.snt.utwente.nl : The requested URL returned error: 404
+> ```
+> 
 
 # TODO Lists
 ## Config Hyprland
