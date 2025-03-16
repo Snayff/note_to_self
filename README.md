@@ -23,6 +23,10 @@
 > [!NOTE]
 > Example hyprland config: https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.conf
 
+## Current Issues
+> [!CAUTION]
+>  Cursor keeps resetting to default, rather than the defined bibata ones. 
+
 ## Define window rules:    
  1. Amend `WindowRules.conf` at `/home/[user]/.config/hypr/UserConfigs/`.
 	- add opacity rules for firefox.
@@ -96,7 +100,6 @@ Current=simple-sddm-2
 2. choose desired style
 
 ### Choose Layout
-
 > Layouts I quite like: 
 >
 > Default
@@ -141,6 +144,19 @@ input {
 }
 ```
 
+## Blue Light Filter with HyprSunset
+> [!NOTE]
+> Source: https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/
+
+1. `yay -S hyprsunset` in terminal.
+2. In `Startup_Apps.conf` add the line
+```
+exec-once = hyprsunset
+```
+> [!CAUTION]
+> might need to add a hyperctl call to set the temperature. https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/#ipc
+
+
 # Setting Up Apps
 ## Simple and Straightforward Installs
 > [!NOTE]
@@ -170,7 +186,9 @@ input {
 > error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from archlinux.cu.be : The requested URL returned error: 404
 > error: failed retrieving file 'libayatana-appindicator-0.5.93-1-x86_64.pkg.tar.zst' from ftp.snt.utwente.nl : The requested URL returned error: 404
 > ```
-> 
+
+
+
 
 # TODO Lists
 ## Config Hyprland
@@ -194,10 +212,7 @@ Ref: https://wiki.hyprland.org/Configuring/Variables/
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_KooL#-hyprland-animations
 - Config fast fetch
 	- https://github.com/JaKooLit/Hyprland-Dots/wiki/FAQ_Terminal#fastfetch
-
-- add hypsunset for bluelight filter https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/
 - hard define border colours, prevent wallust overwriting
-- tiling to cut horizontal (use master layout?)
 - create some default app groups:
 	- dev:
  		- godot - main, left, no opacity
