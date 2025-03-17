@@ -164,6 +164,7 @@ exec-once = hyprsunset
 1. Steam
 2. Firefox
 3. Alacritty
+4. Ferdium (ferdium-bin)
 
 ## Spotify
 > [!CAUTION]
