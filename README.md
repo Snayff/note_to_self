@@ -38,7 +38,7 @@ windowrulev2 = opacity 1.0 override, title: (.*Twitch.*)$
 windowrulev2 = opacity 1.0 override, title: (.*app.plex.*)$
 windowrulev2 = opacity 1.0 override, title: (.*bbc*)$
 ```
-> [!WARNING]
+> [!CAUTION]
 >  twitch, plex, bbc dont work. 🤷
 
 ## Define Screen Lock and Suspend Rules
@@ -105,8 +105,8 @@ Current=simple-sddm-2
 > Default
 
 
-2. SUPER + ALT + B
-3. choose desired layout
+1. SUPER + ALT + B
+2. choose desired layout
 
   
 ## Define UserDecorations
@@ -153,7 +153,7 @@ input {
 ```
 exec-once = hyprsunset
 ```
-> [!CAUTION]
+> [!WARNING]
 > might need to add a hyperctl call to set the temperature. https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/#ipc
 
 
@@ -172,6 +172,7 @@ exec-once = hyprsunset
 
 > [!NOTE]
 > ! Plan !
+> 
 > Install spotify then Spicetify: https://spicetify.app/docs/advanced-usage/installation/
 > 
 > ! Progress !
